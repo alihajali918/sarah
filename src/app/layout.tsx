@@ -1,5 +1,6 @@
 import './globals.css';
-import Header from './components/Header'; // تأكد من المسار الصحيح
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 export default function RootLayout({
   children,
@@ -7,10 +8,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl"> {/* هنا يمكنك تعديل اللغة والاتجاه */}
+    <html lang="ar" dir="rtl">
       <body>
-        <Header />
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
