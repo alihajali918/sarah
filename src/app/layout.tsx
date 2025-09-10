@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 import { Playpen_Sans_Arabic } from 'next/font/google';
 
 const playpen = Playpen_Sans_Arabic({
@@ -19,9 +20,9 @@ export default function RootLayout({
       <body className={playpen.className}>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <div className="pt-24">
             {children}
-          </main>
+          </div>
           <Footer />
         </div>
       </body>
